@@ -14,6 +14,7 @@ const ItemDetail = ({ item, isLoading, addItem }) => {
       <h1>{item.title}</h1>
       <p>{item.description}</p>
       <p>${item.price}</p>
+      <p>Stock: {item.stock}</p>
       <p>Categoría: {item.categoryId}</p>
       <button onClick={() => addItem(item, 1)}>Agregar al carrito</button>
     </div>
