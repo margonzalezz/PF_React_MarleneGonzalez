@@ -5,7 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { BrowserRouter } from "react-router-dom";
 import { initializeApp } from "firebase/app";
 import App from './App.jsx'
-import './index.css'
+// import './index.css'
 
 
 const firebaseConfig = {
