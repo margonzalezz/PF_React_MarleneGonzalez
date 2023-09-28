@@ -10,16 +10,20 @@ const ItemList = ({ items, isLoading }) => {
   return (
     <div className="card-container">
       <ul>
-        <img src={`../../../public/img${items.img}`} alt="" />
         {items.map((item) => (
           <li key={item.id}>
             <Link to={`/item/${item.id}`}>
               <h3>{item.title}</h3>
               <p>${item.price}</p>
+              <p>{item.categoryId}</p>
+              <img src={`/img/${item.imageId}`} />
+              {/* <img src={`/${items.imageId}`} /> */}
+            {/* <img src={`/assets/img/${items.imageId}`} alt="" /> */}
             </Link>
           </li>
         ))}
       </ul>
+      
     </div>
   );
 };
