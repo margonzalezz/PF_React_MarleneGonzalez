@@ -2,20 +2,22 @@ import { Link } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 
 const Navbar = () => {
-    return <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+    return <nav className="navbar navbar-expand-lg ">
+        <div className="container-fluid container-navbar justify-content-flex-start">
                 {/* BRAND */}
-                        <Link to="/" className="navbar-brand border p-3 bg-warning">Coffee House</Link>
+                        <Link to="/" className="navbar-brand p-3 logo-nav">
+                            <img className="logo-house" src="/img/logo-coffee-house.jpg" alt="logo de cafeteria Coffe House - Café de especialidad" />
+                        </Link>
                 {/* LINKS */}
                 <ul className="navbar-nav me-4">
                     <li className="navbar-item">
-                        <Link to="/Menu" className="nav-link active "> Desayunos y meriendas</Link>
+                        <Link to="/category/Menu" className="nav-link item-nav"> Desayunos y meriendas</Link>
                     </li>
-                    <li>
-                    <Link to="/NuestraEspecialidad" className="nav-link active ">Nuestro café de especialidad</Link>
+                    <li className="navbar-item">
+                    <Link to="/category/NuestraEspecialidad" className="nav-link  item-nav">Nuestro café de especialidad</Link>
                     </li>
-                    <li>
-                        <Link to="/Promociones" className="nav-link active ">Promociones</Link>
+                    <li className="navbar-item">
+                        <Link to="/category/Promociones" className="nav-link  item-nav">Promociones</Link>
                     </li>
                 </ul>
                 <CartWidget/>
@@ -24,5 +26,7 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
 
 

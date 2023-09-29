@@ -1,3 +1,39 @@
+*{
+    font-family: 'Lemonada', cursive;
+}
+
+/* -------------NAVBAR--------------- */
+.navbar {
+    background-color: rgb(133, 119, 80);
+}
+/* LOGO */
+.container-navbar .logo-house{
+    object-fit: cover;
+    width: 40%;
+    border-radius: 10px;
+}
+
+.container-navbar .logo-nav{
+    width: 30%;
+    border-right: 0%;
+    margin-right: 0%;
+    padding-right: 0%;
+}
+
+/* LINKS */
+.navbar-item a{
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* CART WIDGET */
+.navbar svg{
+    margin-left: 10rem;
+    margin-right: 2.5rem;
+}
+
+
+/* CONTENEDOR DE LAS CARDS */
 .card-container ul li{
     list-style: none;
 }
@@ -7,8 +43,16 @@
     color: black;
 }
 
+.card-container{
+    display: grid;
+    grid-column: 1rem 1rem 1rem;
+    grid-row: 1rem 1rem 1rem 1rem;
+}
 
-
+.card{
+    border: solid;
+    width: 35%;
+}
 
 
 

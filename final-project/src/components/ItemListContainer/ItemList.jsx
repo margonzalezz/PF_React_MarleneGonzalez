@@ -11,14 +11,12 @@ const ItemList = ({ items, isLoading }) => {
     <div className="card-container">
       <ul>
         {items.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="card">
             <Link to={`/item/${item.id}`}>
+              <img src={`/img/${item.imageId}`} />
               <h3>{item.title}</h3>
               <p>${item.price}</p>
               <p>{item.categoryId}</p>
-              <img src={`/img/${item.imageId}`} />
-              {/* <img src={`/${items.imageId}`} /> */}
-            {/* <img src={`/assets/img/${items.imageId}`} alt="" /> */}
             </Link>
           </li>
         ))}
