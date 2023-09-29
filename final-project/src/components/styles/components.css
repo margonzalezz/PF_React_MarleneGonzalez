@@ -43,17 +43,31 @@
     color: black;
 }
 
-.card-container{
-    display: grid;
-    grid-column: 1rem 1rem 1rem;
-    grid-row: 1rem 1rem 1rem 1rem;
+
+.card-container ul {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card{
     border: solid;
-    width: 35%;
+    border-color: whitesmoke;
+    width: 40%;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+    margin-left: 4rem;
 }
 
+.card h3{
+    font-size: 1.5rem;
+}
+
+.card:hover{
+    -webkit-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
+-moz-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
+box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65)
+}
 
 
 

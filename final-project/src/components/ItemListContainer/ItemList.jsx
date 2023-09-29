@@ -16,7 +16,6 @@ const ItemList = ({ items, isLoading }) => {
               <img src={`/img/${item.imageId}`} />
               <h3>{item.title}</h3>
               <p>${item.price}</p>
-              <p>{item.categoryId}</p>
             </Link>
           </li>
         ))}
