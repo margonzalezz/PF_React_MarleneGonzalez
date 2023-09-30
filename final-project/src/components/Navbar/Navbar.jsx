@@ -3,13 +3,13 @@ import CartWidget from "../CartWidget/CartWidget";
 
 const Navbar = () => {
     return <nav className="navbar navbar-expand-lg ">
-        <div className="container-fluid container-navbar justify-content-flex-start">
+        <div className="container-fluid container-navbar">
                 {/* BRAND */}
-                        <Link to="/" className="navbar-brand p-3 logo-nav">
+                        <Link to="/" className="logo-nav">
                             <img className="logo-house" src="/img/logo-coffee-house.jpg" alt="logo de cafeteria Coffe House - Café de especialidad" />
                         </Link>
                 {/* LINKS */}
-                <ul className="navbar-nav me-4">
+                <ul className="navbar-nav">
                     <li className="navbar-item">
                         <Link to="/category/Menu" className="nav-link item-nav"> Desayunos y meriendas</Link>
                     </li>

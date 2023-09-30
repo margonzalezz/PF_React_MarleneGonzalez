@@ -4,26 +4,34 @@
 
 /* -------------NAVBAR--------------- */
 .navbar {
-    background-color: rgb(133, 119, 80);
+    background-color: #857750;
 }
 /* LOGO */
 .container-navbar .logo-house{
     object-fit: cover;
-    width: 40%;
+    width: 30%;
     border-radius: 10px;
 }
 
+
 .container-navbar .logo-nav{
-    width: 30%;
-    border-right: 0%;
-    margin-right: 0%;
-    padding-right: 0%;
+    width: 25%;
 }
+
+.container-navbar a{
+    width: 20%;
+}
+
 
 /* LINKS */
 .navbar-item a{
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     color: white;
+}
+
+.navbar-nav{
+    margin-right: 13%;
+    margin-left: 0%;
 }
 
 /* CART WIDGET */
@@ -52,15 +60,19 @@
 .card{
     border: solid;
     border-color: whitesmoke;
-    width: 40%;
+    width: 30%;
     justify-content: center;
     align-items: center;
     margin: 3rem;
-    margin-left: 4rem;
+    margin-left: 10rem;
 }
 
 .card h3{
     font-size: 1.5rem;
+}
+
+.card a{
+    width: 55%;
 }
 
 .card:hover{
@@ -70,8 +82,41 @@ box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65)
 }
 
 
+/* ITEMDETAIL */
 
+.card-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 3%;
+    margin: 3%;
+}
 
+.card-detail .price-detail{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.card-detail button{
+    border: none;
+    background-color: #d6b96a;
+}
 
+.img-detail{
+    object-fit: cover;
+    width: 160%;
+    height: 100%;
+    margin-top: 8%;
+}
 
+.button-cart{
+    width: 95%;
+}
 
+.navbar svg{
+    margin: 0%;
+}
+
+.cart-counter{
+    margin-right: 1.5%;
+}
