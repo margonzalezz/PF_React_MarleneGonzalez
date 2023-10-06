@@ -20,8 +20,8 @@ const ItemCount = ({onAdd, initial = 0}) => {
                 <button onClick={aumentar}>+</button>
 
                 {count > 0 ?
-                    <button className="agregar-carrito" onClick={() => addItem(item, selectedQuantity)}> Agregar al Carrito </button> :
-                    <button className="agregar-carrito" disabled onClick={() => addItem(item, -selectedQuantity)}> Agregar al Carrito </button>}
+                    <button className="agregar-carrito" onClick={() => onAdd(item, selectedQuantity)}> Agregar al Carrito </button> :
+                    <button className="agregar-carrito" disabled onClick={() => onAdd(item, -selectedQuantity)}> Agregar al Carrito </button>}
                 
             </div>
         </div>
