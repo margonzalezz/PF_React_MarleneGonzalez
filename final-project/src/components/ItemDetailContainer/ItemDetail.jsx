@@ -19,9 +19,6 @@ const ItemDetail = ({ item, isLoading, addItem }) => {
             <p>{item.description}</p>
             <p className="price-detail">${item.price}</p>
           <ItemCount onAdd={(count) => setSelectedQuantity(count)} initial={selectedQuantity} />
-
-            {/* <button onClick={() => addItem(item, selectedQuantity)}>Agregar al carritdvxzo</button>
-            <button onClick={() => addItem(item, -selectedQuantity)}>Quitar del carrito</button> */}
           </div>
 
           <div>
