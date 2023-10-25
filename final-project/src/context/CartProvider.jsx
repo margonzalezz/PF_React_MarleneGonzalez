@@ -11,7 +11,6 @@ const CartProvider = ({ children }) => {
   };
 
   const addItem = (product, quantity) => {
-
     const itemInCart = isInCart(product.id);
 
     if (itemInCart) {
@@ -22,30 +21,35 @@ const CartProvider = ({ children }) => {
             quantity: item.quantity + quantity,
           };
         }
-        const newTotal = cart.reduce((total, item) => total + item.quantity, 0);
-        setCartTotal(newTotal);
-
         return item;
       });
+
       setCart(newCart);
+
     } else {
-      // agregar item a cart
       setCart([...cart, { ...product, quantity }]);
     }
+
+    const newTotal = newCart.reduce((total, item) => total + item.quantity, 0);
+    setCartTotal(newTotal);
   };
 
   const removeItem = (id) => {
     const newCart = cart.filter((item) => item.id !== id);
     setCart(newCart);
+    const newTotal = newCart.reduce((total, item) => total + item.quantity, 0);
+    setCartTotal(newTotal);
   };
 
   const clear = () => {
     setCart([]);
+    setCartTotal(0);
   };
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clear, isInCart, cartTotal }} >
+      value={{ cart, addItem, removeItem, clear, isInCart, cartTotal }}
+    >
       {children}
     </CartContext.Provider>
   );

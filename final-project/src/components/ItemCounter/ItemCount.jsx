@@ -2,9 +2,9 @@ import React, { useContext, useState } from "react";
 import CartContext from "../../context/CartContext";
 
 const ItemCount = ({ item }) => {
-  const { addItem } = useContext(CartContext); 
+  const { addItem } = useContext(CartContext);
 
-  const [count, setCount] = useState(0); 
+  const [count, setCount] = useState(0);
 
   const aumentar = () => {
     setCount(count + 1);
@@ -18,7 +18,7 @@ const ItemCount = ({ item }) => {
 
   const agregarAlCarrito = () => {
     if (count > 0) {
-      addItem(item, count); // Agrega el producto con la cantidad actual
+      addItem(item, count);
     }
   };
 
@@ -29,7 +29,7 @@ const ItemCount = ({ item }) => {
         <p className="mx-2 mt-3 badge text-bg-light"> Cantidad: {count}</p>
         <button onClick={aumentar}>+</button>
 
-        {count > 0 ? ( 
+        {count > 0 ? (
           <button className="agregar-carrito text-white" onClick={agregarAlCarrito}>
             Agregar al Carrito
           </button>
