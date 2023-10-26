@@ -3,7 +3,6 @@ import CartContext from "./CartContext";
 
 const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
 
   const isInCart = (id) => {
     const itemInCart = cart.find((item) => item.id === id);
@@ -11,6 +10,10 @@ const CartProvider = ({ children }) => {
   };
 
   const addItem = (product, quantity) => {
+    // item ya existe en cart?
+    // si existe, sumar quantity
+    // si no existe, agregar item a cart 
+
     const itemInCart = isInCart(product.id);
 
     if (itemInCart) {
@@ -21,34 +24,28 @@ const CartProvider = ({ children }) => {
             quantity: item.quantity + quantity,
           };
         }
+
         return item;
       });
-
       setCart(newCart);
-
     } else {
+      // agregar item a cart
       setCart([...cart, { ...product, quantity }]);
     }
-
-    const newTotal = newCart.reduce((total, item) => total + item.quantity, 0);
-    setCartTotal(newTotal);
   };
 
   const removeItem = (id) => {
     const newCart = cart.filter((item) => item.id !== id);
     setCart(newCart);
-    const newTotal = newCart.reduce((total, item) => total + item.quantity, 0);
-    setCartTotal(newTotal);
   };
 
   const clear = () => {
     setCart([]);
-    setCartTotal(0);
   };
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clear, isInCart, cartTotal }}
+      value={{ cart, addItem, removeItem, clear, isInCart }}
     >
       {children}
     </CartContext.Provider>

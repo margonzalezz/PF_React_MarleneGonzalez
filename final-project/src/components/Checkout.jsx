@@ -33,31 +33,31 @@ const Checkout = () => {
 
   return (
     <div>
-      <h1>Checkout</h1>
-
-      <h2>Resumen de la compra</h2>
+      <h1 className="resumen">RESUMEN DE LA COMPRA</h1>
 
       {orderId && <p>El id de la orden es: {orderId}</p>}
 
       {!orderId && (
         <>
-          <div>
-            <h4>Formulario de contacto</h4>
+          {/* <div>
+            <h4>Formulario de contacto</h4> */}
             {/* TODO: Formulario */}
-          </div>
+          {/* </div> */}
 
           <div>
-            <h4>Productos</h4>
-            <ul>
-              {cart.map((item) => (
-                <li key={item.id}>
-                  <p>{item.title}</p>
-                  <p>Cantidad: {item.quantity}</p>
-                  <p>Precio por unidad: ${item.price}</p>
-                  <p>Subtotal: ${item.price * item.quantity}</p>
-                </li>
-              ))}
-            </ul>
+            <h4 className="check-productos">PRODUCTOS</h4>
+            <div className="container-producto">
+                <ul>
+                  {cart.map((item) => (
+                    <li key={item.id}>
+                      <p>{item.title}</p>
+                      <p>Cantidad: {item.quantity}</p>
+                      <p>Precio por unidad: ${item.price}</p>
+                      <p>Subtotal: ${item.price * item.quantity}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
           </div>
 
           <p>Total de la compra: {total}</p>
