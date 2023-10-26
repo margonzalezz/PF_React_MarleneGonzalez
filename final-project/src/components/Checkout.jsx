@@ -7,7 +7,7 @@ import { createOrder } from "../components/services";
 const Checkout = () => {
   const [orderId, setOrderId] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const { cart, clear } = useContext(CartContext);
+  const { cart, clear, removeItem } = useContext(CartContext);
 
   const total = getCartTotal(cart);
 
@@ -31,6 +31,11 @@ const Checkout = () => {
     });
   };
 
+  const handleRemoveItem = (itemId) => {
+    // Llama a la función removeItem del contexto para eliminar un producto
+    removeItem(itemId);
+  };
+
   return (
     <div>
       <h1 className="resumen">RESUMEN DE LA COMPRA</h1>
@@ -39,26 +44,21 @@ const Checkout = () => {
 
       {!orderId && (
         <>
-          {/* <div>
-            <h4>Formulario de contacto</h4> */}
-            {/* TODO: Formulario */}
-          {/* </div> */}
-
-          <div>
-            <h4 className="check-productos">PRODUCTOS</h4>
-            <div className="container-producto">
-                <ul>
-                  {cart.map((item) => (
-                    <li key={item.id}>
-                      <p>{item.title}</p>
-                      <p>Cantidad: {item.quantity}</p>
-                      <p>Precio por unidad: ${item.price}</p>
-                      <p>Subtotal: ${item.price * item.quantity}</p>
-                    </li>
-                  ))}
-                </ul>
+          <div className="container-producto">
+            {cart.map((item) => (
+              <div key={item.id} className="producto-card">
+                <img className="img-detail" src={`/img/${item.imageId}`} alt={item.title} />
+                <div className="producto-info">
+                  <p>{item.title}</p>
+                  <p>Cantidad: {item.quantity}</p>
+                  <p>Precio por unidad: ${item.price}</p>
+                  <p>Subtotal: ${item.price * item.quantity}</p>
+                  <button onClick={() => handleRemoveItem(item.id)}>Eliminar del carrito</button>
+                </div>
               </div>
+            ))}
           </div>
+
 
           <p>Total de la compra: {total}</p>
 

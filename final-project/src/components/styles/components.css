@@ -78,8 +78,8 @@
 
 .card:hover{
     -webkit-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
--moz-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65)
+    -moz-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
+    box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
 }
 
 
@@ -143,9 +143,26 @@ box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65)
     padding: 1%;
 }
 
-.container-producto{
+
+.producto-card .img-detail{
+    width: 100%;
+}
+
+.producto-card{
+    border: solid;
+    width: 20%;
+    margin: 2rem 0rem;
+    padding: 1.5%;
+    margin-left: 70%;
+
+}
+
+.producto-card:hover{
     -webkit-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
     -moz-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
     box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
-    width: 50%;
+}
+
+.container-producto{
+    background-color: green;
 }

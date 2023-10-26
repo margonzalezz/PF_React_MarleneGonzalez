@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import CartContext from "./CartContext";
 
 const CartProvider = ({ children }) => {
@@ -10,10 +10,6 @@ const CartProvider = ({ children }) => {
   };
 
   const addItem = (product, quantity) => {
-    // item ya existe en cart?
-    // si existe, sumar quantity
-    // si no existe, agregar item a cart 
-
     const itemInCart = isInCart(product.id);
 
     if (itemInCart) {
@@ -24,12 +20,10 @@ const CartProvider = ({ children }) => {
             quantity: item.quantity + quantity,
           };
         }
-
         return item;
       });
       setCart(newCart);
     } else {
-      // agregar item a cart
       setCart([...cart, { ...product, quantity }]);
     }
   };

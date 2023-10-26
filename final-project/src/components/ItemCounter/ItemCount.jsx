@@ -19,7 +19,7 @@ const ItemCount = ({ onAdd }) => {
         <button onClick={reducir}>-</button>
         <p className="mx-2 mt-3 badge text-bg-light">Cantidad: {count}</p>
         <button onClick={aumentar}>+</button>
-        <button className="agregar-carrito" onClick={() => onAdd(count)}>
+        <button className="agregar-carrito text-white" onClick={() => onAdd(count)}>
           Agregar al Carrito
         </button>
       </div>

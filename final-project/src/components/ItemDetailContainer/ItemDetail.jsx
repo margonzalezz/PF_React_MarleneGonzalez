@@ -6,7 +6,6 @@ const ItemDetail = ({ item, isLoading }) => {
   const { addItem } = useContext(CartContext);
 
   const handleAddToCart = (quantity) => {
-    // Llama a la función addItem del contexto para agregar elementos al carrito
     if (quantity > 0) {
       addItem(item, quantity);
     }
