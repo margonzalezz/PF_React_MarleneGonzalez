@@ -44,21 +44,33 @@ const Checkout = () => {
 
       {!orderId && (
         <>
-          <div className="container-producto">
-            {cart.map((item) => (
-              <div key={item.id} className="producto-card">
-                <img className="img-detail" src={`/img/${item.imageId}`} alt={item.title} />
-                <div className="producto-info">
-                  <p>{item.title}</p>
-                  <p>Cantidad: {item.quantity}</p>
-                  <p>Precio por unidad: ${item.price}</p>
-                  <p>Subtotal: ${item.price * item.quantity}</p>
-                  <button onClick={() => handleRemoveItem(item.id)}>Eliminar del carrito</button>
-                </div>
-              </div>
-            ))}
-          </div>
 
+        <div className="checkout-container">
+          <div>
+            <h3>Ingresa tus datos para completar la compra</h3>
+            
+          </div>
+              <div className="container-producto">
+                {cart.map((item) => (
+                  <div key={item.id} className="producto-card">
+                    <div className="producto-info">
+                    <img className="img-detail" src={`/img/${item.imageId}`} alt={item.title} />
+
+                      <div>
+                      <p className="item-title">{item.title}</p>
+                      <p>Cantidad: {item.quantity}</p>
+                      </div>
+
+                      <div>
+                      <p>Precio por unidad: ${item.price}</p>
+                      <p>Subtotal: ${item.price * item.quantity}</p>
+                      </div>
+                    </div>
+                    <button onClick={() => handleRemoveItem(item.id)}>Eliminar del carrito</button>
+                  </div>
+                ))}
+              </div>
+        </div>
 
           <p>Total de la compra: {total}</p>
 

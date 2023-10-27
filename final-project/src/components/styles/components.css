@@ -145,24 +145,60 @@
 
 
 .producto-card .img-detail{
-    width: 100%;
+    width: 20%;
+    object-fit: cover;
+    height: 70%;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .producto-card{
-    border: solid;
-    width: 20%;
     margin: 2rem 0rem;
-    padding: 1.5%;
-    margin-left: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.producto-info{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.producto-card button{
+    margin-left: 1%;
+    background-color: rgb(133, 119, 80);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 2%;
+    font-size: 0.6rem;
+    height: 40%;
+    margin-bottom: 5px;
 }
 
 .producto-card:hover{
-    -webkit-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
-    -moz-box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
-    box-shadow: 10px 10px 39px -1px rgba(143,143,143,0.65);
+    -webkit-box-shadow: 10px 10px 39px -1px rgba(133,119,80,0.65);
+    -moz-box-shadow: 10px 10px 39px -1px rgba(133,119,80,0.65);
+    box-shadow: 10px 10px 39px -1px rgba(133,119,80,0.65);
 }
 
 .container-producto{
-    background-color: green;
+    border: solid;
+    border-width: 3px;
+    border-color: whitesmoke;
+    width: 40%;
+    padding: 2%;
+}
+
+.item-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 2%;
+}
+
+.checkout-container{
+    display: flex;
+    justify-content: space-around;
 }
